@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:somenew/splashscreen.dart';
-import 'package:somenew/swiperscreen.dart';
-import 'Navigation drawer.dart';
+import 'Avatarpage.dart';
+
 
 
 
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.teal,
       ),
-      home:  OnboardingScreen(),
+      home:  AvatarPage(),
     );
   }
 }
