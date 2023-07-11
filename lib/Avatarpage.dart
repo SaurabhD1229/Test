@@ -17,7 +17,7 @@ class _AvatarPageState extends State<AvatarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Avatar Color Change'),
+        title: const Text('Avatar Color Change'),
       ),
       body: Center(
         child: Row(
