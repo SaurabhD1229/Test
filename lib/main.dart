@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Avatarpage.dart';
+import 'package:somenew/book%20information.dart';
+import 'package:somenew/homescreen.dart';
+import 'package:somenew/splashscreen.dart';
+
 
 
 
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.teal,
       ),
-      home:  AvatarPage(),
+      home:  const Splashscreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:somenew/book%20information.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -24,7 +25,7 @@ class _LoginState extends State<Login> {
                           Radius.circular(11),
                         ),
                         borderSide:
-                            BorderSide(color: Colors.orangeAccent, width: 2)),
+                            BorderSide(color: Colors.teal, width: 2)),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(11),
@@ -33,7 +34,7 @@ class _LoginState extends State<Login> {
                     ),
                     suffixIcon: Icon(
                       Icons.people,
-                      color: Colors.orangeAccent,
+                      color: Colors.teal,
                     ),
                     hintText: 'UserId'),
               ),
@@ -50,7 +51,7 @@ class _LoginState extends State<Login> {
                             Radius.circular(11),
                           ),
                           borderSide:
-                              BorderSide(color: Colors.orangeAccent, width: 2)),
+                              BorderSide(color: Colors.teal, width: 2)),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(11),
@@ -61,11 +62,12 @@ class _LoginState extends State<Login> {
                           onPressed: () {},
                           icon: Icon(
                             Icons.remove_red_eye,
-                            color: Colors.orangeAccent,
+                            color: Colors.teal,
                           )))),
               SizedBox(height: 15,),
 
               ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BookInfoApp(),));
 
               }, child: Text("Login"),),
             ],

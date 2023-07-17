@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:somenew/Navigation%20drawer.dart';
+import 'package:somenew/Textfield/Newlogin.dart';
+import 'package:somenew/book%20information.dart';
 
 
 class Splashscreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Navigate(),));
+          context, MaterialPageRoute(builder: (context) =>  const Login(),));
     });
   }
 
