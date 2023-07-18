@@ -1,77 +1,94 @@
 import 'package:flutter/material.dart';
 import 'package:somenew/book%20information.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
-
+class LoginPage extends StatefulWidget {
   @override
-  State<Login> createState() => _LoginState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
+  String username = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text('Login Page')),
+      ),
       body: Center(
-        child: Container(
-          width: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 60,
+              width: 200,
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    username = value;
+                  });
+                },
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(11),
-                        ),
-                        borderSide:
-                            BorderSide(color: Colors.teal, width: 2)),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(11),
-                      ),
-                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                    ),
-                    suffixIcon: Icon(
-                      Icons.people,
-                      color: Colors.teal,
-                    ),
-                    hintText: 'UserId'),
+                  hintText: 'Username',
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.teal),
+                  ),
+                ),
               ),
-              SizedBox(
-                height: 9,
+            ),
+            Container(
+              height: 60,
+              width: 200,
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.teal),
+                  ),
+                ),
               ),
-              TextField(
-                  keyboardType: TextInputType.datetime,
-                  obscureText: true,
-                  obscuringCharacter: "*",
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(11),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (username.isNotEmpty && password.isNotEmpty) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BookInfoApp(),
+                    ),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Error'),
+                        content: Text('Please enter a username and password.'),
+                        actions: <Widget>[
+                          TextButton(
+                            child: Text('OK'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                           ),
-                          borderSide:
-                              BorderSide(color: Colors.teal, width: 2)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(11),
-                          ),
-                          borderSide: BorderSide(color: Colors.grey, width: 2)),
-                      hintText: "Password",
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.remove_red_eye,
-                            color: Colors.teal,
-                          )))),
-              SizedBox(height: 15,),
-
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => BookInfoApp(),));
-
-              }, child: Text("Login"),),
-            ],
-          ),
+                        ],
+                      );
+                    },
+                  );
+                }
+              },
+              child: Text('Login'),
+            ),
+          ],
         ),
       ),
     );

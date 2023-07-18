@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:somenew/Textfield/Newlogin.dart';
-import 'package:somenew/book%20information.dart';
+
 
 
 class Splashscreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) =>  const Login(),));
+          context, MaterialPageRoute(builder: (context) =>   LoginPage(),));
     });
   }
 
@@ -29,7 +29,7 @@ class _SplashscreenState extends State<Splashscreen> {
     return Scaffold(
       body: Container(
         color: Colors.teal,
-        child: Center(child: Text("Navigate", style: TextStyle(fontSize: 35
+        child: Center(child: Text(" Mistory Books", style: TextStyle(fontSize: 35
           , fontWeight: FontWeight.w700, color: Colors.black,
         ),),),
       ),

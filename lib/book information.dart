@@ -163,8 +163,7 @@ class BookInfoApp extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 60),
                       child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg"),
+                        backgroundImage: AssetImage("assets/images/img_4.png"),
                         radius: 60,
                       ),
                     ),
